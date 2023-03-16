@@ -7,7 +7,7 @@ function GuessInput({ handleInput }) {
       className="guess-input-wrapper"
       onSubmit={(e) => {
         e.preventDefault();
-        handleInput(word.toUpperCase());
+        handleInput(word);
         setWord('');
       }}
     >
@@ -15,11 +15,13 @@ function GuessInput({ handleInput }) {
       <input
         id="guess-input"
         type="text"
-        minLength="5"
-        maxLength="5"
+        minLength={5}
+        maxLength={5}
+        pattern="[a-zA-Z]{5}"
+        title="5 letter word"
         value={word}
         onChange={(e) => {
-          setWord(e.target.value);
+          setWord(e.target.value.toUpperCase());
         }}
       />
     </form>
