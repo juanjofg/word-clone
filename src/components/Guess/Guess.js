@@ -7,7 +7,7 @@ function Guess({ word }) {
     <p className="guess">
       {range(5).map((cell, idx) => (
         <span key={idx} className="cell">
-          {letters && letters.length && letters[idx]}
+          {letters ? letters[idx] : undefined}
         </span>
       ))}
     </p>
