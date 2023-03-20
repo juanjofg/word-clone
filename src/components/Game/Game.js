@@ -16,12 +16,11 @@ function Game() {
     const nextGuesses = [...guesses];
     nextGuesses.push(value);
     setGuesses(nextGuesses);
-    console.log(value);
   };
 
   return (
     <>
-      <Guesses guesses={guesses} />
+      <Guesses guesses={guesses} answer={answer} />
       <GuessInput handleInput={handleInput} />
     </>
   );
